@@ -32,8 +32,8 @@ jobs:
     - if: matrix.build-mode == 'manual'
       shell: bash
       run: |
-          ./BuildLinux.sh -u
-          ./BuildLinux.sh -dsi
+          cmake . -LH
+          ccmake .
     - name: Free disk space
       run: |
           sudo docker rmi $(docker image ls -aq) >/dev/null 2>&1 || true
