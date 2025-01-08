@@ -32,7 +32,7 @@ jobs:
     - if: matrix.build-mode == 'manual'
       shell: bash
       run: |
-          cmake . -LH
+          cmake . -LH -DFORCE_INSOURCE_BUILD=1
           ccmake .
     - name: Free disk space
       run: |
