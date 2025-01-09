@@ -32,7 +32,7 @@ jobs:
     - if: matrix.build-mode == 'manual'
       shell: bash
       run: |
-          sudo apt-get install -y libtirpc-dev build-dep mysql-server
+          sudo apt-get install -y libtirpc-dev mysql-server
           cmake -B build -LH
           cd build
           ccmake .
