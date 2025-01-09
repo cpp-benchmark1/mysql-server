@@ -34,8 +34,7 @@ jobs:
       run: |
           sudo apt-get install -y libtirpc-dev mysql-server
           cmake -B build -LH
-          cd build
-          ccmake .
+          cmake --build build
     - name: Free disk space
       run: |
           sudo docker rmi $(docker image ls -aq) >/dev/null 2>&1 || true
